@@ -3,12 +3,10 @@ import './App.css';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home"
 import About from "./components/About"
+import Vans from "./components/Vans"
 
+import "./server"
 
-function Dog(){
-  return(
-  <h2>Dog</h2>)
-}
 function App() {
   return (
     <BrowserRouter>
@@ -16,11 +14,13 @@ function App() {
         <Link className="site-logo" to="/">#VanLife</Link>
         <nav>
           <Link to="/about">About</Link>
+          <Link to="/Vans">Vans</Link>
         </nav>
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/Vans" element={<Vans />} />
       </Routes>
     </BrowserRouter>
   )
