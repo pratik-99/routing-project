@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home"
 import About from "./components/About"
 import Vans from "./components/Vans"
+import VanDetails from "./components/VanDetails"
 
 import "./server"
 
@@ -21,6 +21,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/Vans" element={<Vans />} />
+        <Route path="/Vans/:id" element={<VanDetails />} />
       </Routes>
     </BrowserRouter>
   )
