@@ -4,17 +4,13 @@ import { useEffect, useState } from "react"
 
 export default function VanDetails(){
     const [van, setVan]= useState(null)
-    const params = useParams()
-   
-
+    const params = useParams()  
     useEffect(()=>{
 
         async function showVanDetail(){
             const response = await fetch(`/api/vans/${params.id}`)
-            const data = await response.json()
-            
-            setVan(data.vans)
-            
+            const data = await response.json()       
+            setVan(data.vans)   
         }
         showVanDetail()
     },[params.id]
