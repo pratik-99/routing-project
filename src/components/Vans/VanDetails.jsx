@@ -1,5 +1,5 @@
 import React from "react"
-import {useParams} from "react-router-dom"
+import {Link, useParams} from "react-router-dom"
 import { useEffect, useState } from "react"
 
 export default function VanDetails(){
@@ -20,6 +20,7 @@ export default function VanDetails(){
         <div className="van-detail-container">
             {van ? 
                 (<div className="van-detail">
+                    <Link to="/vans" style={{textDecoration:"none", color:"black"}}>Back to all vans</Link>
                     <img src={van.imageUrl}></img>
                     <i className={`van-type ${van.type} selected`}>{van.type}</i>
                     <h2>{van.name}</h2>
