@@ -1,14 +1,24 @@
 import React from "react"
-import {Link, Outlet} from "react-router-dom"
+import {NavLink, Outlet} from "react-router-dom"
 
 export default function HostLayout(){
 
     return (
         <>
         <nav className="host-nav">
-            <Link to="/host">Dashboard</Link>
-            <Link to="/host/income">Income</Link>
-            <Link to="/host/reviews">Reviews</Link>
+            <NavLink 
+            className={({isActive})=>isActive?"selected":""} end to="/host"> 
+{/* over here the end keyword is used to stop multiple selection of link at a single time */}
+                Dashboard
+            </NavLink>
+            <NavLink 
+            className={({isActive})=>isActive?"selected":""} to="/host/income">
+                Income
+            </NavLink>
+            <NavLink 
+            className={({isActive})=>isActive?"selected":""} to="/host/reviews">
+                Reviews
+            </NavLink>
         </nav>
         <Outlet/>
         </>

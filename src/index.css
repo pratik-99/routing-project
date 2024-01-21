@@ -304,6 +304,11 @@ i[class*='van-type-'] {
 
 .host-nav {
   display: flex;
+  .selected{
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+  }
 }
 
 .host-nav a {
@@ -317,4 +322,10 @@ i[class*='van-type-'] {
   color: #161616;
   text-decoration: underline;
   font-weight: 600;
+}
+
+.selected{
+  color: black;
+  font-weight: bold;
+  text-decoration: underline;
 }
