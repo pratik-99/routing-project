@@ -12,6 +12,9 @@ import Layout from "./utility/Layout"
 import HostLayout from "./utility/HostLayout"
 import "./server"
 import HostvanDetails from './components/Host/HostvanDetails';
+import HostVanInfo from './components/Host/HostVanInfo';
+import HostVanPricing from './components/Host/HostVanPricing';
+import HostVanPhotos from './components/Host/HostVanPhotos';
 
 function App() {
   return (
@@ -27,9 +30,14 @@ function App() {
             <Route index element={<Dashboard/>}/>
             <Route path="income" element={<Income/>}/>
             <Route path="vans" element={<Hostvans/>}/>
-            <Route path="vans/:id" element={<HostvanDetails/>}/>
             <Route path="reviews" element={<Reviews/>}/>
+            <Route path="vans/:id" element={<HostvanDetails/>}>
+              <Route index element={<HostVanInfo/>}/>
+              <Route path='price' element={<HostVanPricing/>}/>
+              <Route path='photos' element={<HostVanPhotos/>}/>
+            </Route>
           </Route>
+            
 
 
         </Route>
