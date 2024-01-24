@@ -173,6 +173,16 @@ footer {
   padding-inline: 23px
 }
 
+.van-list-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap:5px
+}
+
+.van-list-filter-buttons > a {
+  margin-right: 15px;
+}
+
 .van-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -206,6 +216,7 @@ footer {
   background-color: #FFEAD0;
   color: #4D4D4D;
   transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
 }
 
 .van-type:hover {
@@ -233,15 +244,15 @@ footer {
 }
 
 .van-type.clear-filters {
-  margin-left: -20px;
+
   height: 34px;
-  padding: 6px 26px;
+  padding: 6px 26px  ;
   font-style: normal;
   font-weight: 500;
   border: none;
   border-radius: 5px;
-  text-decoration: underline;
-  background-color: transparent;
+  text-decoration: none;
+  background-color: #fadadd;
   color: #4D4D4D;
 }
 
