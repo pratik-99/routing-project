@@ -1,10 +1,12 @@
 import React from "react"
-import {Link, useParams} from "react-router-dom"
+import {Link, useParams, useLocation} from "react-router-dom"
 import { useEffect, useState } from "react"
 
 export default function VanDetails(){
     const [van, setVan]= useState(null)
     const params = useParams()  
+    const location =useLocation()
+   
     useEffect(()=>{
 
         async function showVanDetail(){
@@ -15,12 +17,12 @@ export default function VanDetails(){
         showVanDetail()
     },[params.id]
     )
-    
+    const previousPath= location.state?.search || ""
     return(
         <div className="van-detail-container">
             {van ? 
                 (<div className="van-detail">
-                    <Link to="/vans" style={{textDecoration:"none", color:"black"}}> <span style={{fontSize:"20px"}}>&larr;</span> Back to all vans</Link>
+                    <Link to={`..${previousPath}`} relative="path" style={{textDecoration:"none", color:"black"}}> <span style={{fontSize:"20px"}}>&larr;</span> Back to all vans</Link>
                     <img src={van.imageUrl}></img>
                     <i className={`van-type ${van.type} selected`}>{van.type}</i>
                     <h2>{van.name}</h2>
