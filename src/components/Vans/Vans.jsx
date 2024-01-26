@@ -31,10 +31,23 @@ return (
 <div className="van-list-container">
     <h1>Explore our van options</h1>
     <div className="van-list-filter-buttons">
-        <button onClick={()=>setSearchParams({type:"simple"})} className="van-type simple">simple</button>
-        <button onClick={()=>setSearchParams({type:"rugged"})} className="van-type rugged">rugged</button>
-        <button onClick={()=>setSearchParams({type:"luxury"})} className="van-type luxury">luxury</button>
-        <button onClick={()=>setSearchParams({})} className="van-type clear-filters">clear filter</button>
+        <button onClick={()=>setSearchParams({type:"simple"})} 
+        className={`van-type simple ${typefilter === "simple" ? "selected" : ""}`}>
+            simple
+        </button>
+        <button onClick={()=>setSearchParams({type:"rugged"})} 
+        className={`van-type rugged ${typefilter === "rugged" ? "selected" : ""}` }>
+            rugged
+        </button>
+        <button onClick={()=>setSearchParams({type:"luxury"})} 
+        className={`van-type luxury ${typefilter === "luxury" ? "selected" : ""}`
+        }>
+            luxury
+        </button>
+        {typefilter && <button onClick={()=>setSearchParams({})} 
+        className="van-type clear-filters">
+            clear filter
+        </button>}
 
     </div>
             <div className="van-list">
