@@ -18,11 +18,15 @@ export default function VanDetails(){
     },[params.id]
     )
     const previousPath= location.state?.search || ""
+    const type= location.state?.type || "all"
     return(
         <div className="van-detail-container">
             {van ? 
                 (<div className="van-detail">
-                    <Link to={`..${previousPath}`} relative="path" style={{textDecoration:"none", color:"black"}}> <span style={{fontSize:"20px"}}>&larr;</span> Back to all vans</Link>
+                    <Link to={`..${previousPath}`} relative="path" style={{textDecoration:"none", color:"black"}}>
+                         <span style={{fontSize:"20px"}}>
+                            &larr;
+                        </span> Back to {type} vans</Link>
                     <img src={van.imageUrl}></img>
                     <i className={`van-type ${van.type} selected`}>{van.type}</i>
                     <h2>{van.name}</h2>
