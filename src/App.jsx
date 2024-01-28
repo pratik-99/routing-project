@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home"
 import About from "./components/About"
 import Vans from "./components/Vans/Vans"
@@ -15,14 +15,16 @@ import HostvanDetails from './components/Host/HostvanDetails';
 import HostVanInfo from './components/Host/HostVanInfo';
 import HostVanPricing from './components/Host/HostVanPricing';
 import HostVanPhotos from './components/Host/HostVanPhotos';
+import NotFound from './components/Notfound';
 
 function App() {
   return (
     <BrowserRouter>
 
       <Routes>
-        <Route element={<Layout/>}>
-          <Route path="/" element={<Home />} />
+        <Route path="/" element={<Layout/>}>
+          <Route path="*" element={<NotFound/>}/>
+          <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/Vans" element={<Vans />} />
           <Route path="/Vans/:id" element={<VanDetails />} />
@@ -37,8 +39,6 @@ function App() {
               <Route path='photos' element={<HostVanPhotos/>}/>
             </Route>
           </Route>
-            
-
 
         </Route>
       </Routes>
