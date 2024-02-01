@@ -1,10 +1,14 @@
 import './App.css';
-import { 
-  Route, createBrowserRouter,
+import 
+{ 
+  Route, 
+  createBrowserRouter,
   createRoutesFromElements, 
-  RouterProvider } from "react-router-dom";
+  RouterProvider 
+} from "react-router-dom";
 import Home from "./components/Home"
 import About from "./components/About"
+import Login from "./components/Login"
 import Vans from "./components/Vans/Vans"
 import VanDetails from "./components/Vans/VanDetails"
 import Dashboard from "./components/Host/Dashboard"
@@ -27,6 +31,7 @@ function App() {
           <Route path="*" element={<NotFound/>}/>
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login/>}/>
           <Route path="/Vans" element={<Vans />} />
           <Route path="/Vans/:id" element={<VanDetails />} />
           <Route path="host" element={<HostLayout />} >
